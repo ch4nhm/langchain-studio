@@ -2,19 +2,19 @@
 
 init:
 	cd backend && poetry install
-	cd web && npm install
+	cd frontend && npm install
 
 ingest:
 	@echo "Generating dummy data if not exists..."
-	cd scripts && python generate_dummy_data.py
+	cd backend && poetry run python scripts/generate_dummy_data.py
 	@echo "Running ETL pipeline..."
-	cd scripts && python ingest.py
+	cd backend && poetry run python scripts/ingest.py
 
 start-backend:
 	cd backend && poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 start-frontend:
-	cd web && npm run dev
+	cd frontend && npm run dev
 
 test:
 	cd backend && poetry run pytest --cov=app tests/

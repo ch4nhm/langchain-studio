@@ -26,6 +26,8 @@ dependencies = [
     "sqlalchemy>=2.0.30",
     "tiktoken>=0.7.0",
     "sse-starlette>=2.1.0",
+    "myapplication (>=0.1.0,<0.2.0)",
+    "retrieval (>=0.0.1.dev6,<0.0.2)",
 ]
 
 [project.optional-dependencies]

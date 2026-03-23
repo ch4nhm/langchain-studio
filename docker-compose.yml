@@ -18,9 +18,9 @@ services:
     volumes:
       - chroma_data:/app/chroma_db
 
-  web:
+  frontend:
     build:
-      context: ./web
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "80:80"

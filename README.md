@@ -33,7 +33,7 @@ make ingest
 
 4. **一键启动 (Docker Compose)**：
 ```bash
-# 启动 api, web, postgres, redis, chroma 五件套
+# 启动 api, frontend, postgres, redis, chroma 五件套
 docker-compose up -d
 ```
 
@@ -69,7 +69,7 @@ make lint
 ```
 
 ## 架构图
-请参考 `docs/architecture.md` 中的 C4 容器图与序列图。
+请参考 `backend/docs/architecture.md` 中的 C4 容器图与序列图。
 
 ## 开发者手册
-详细指南请参考 `docs/developer_manual.md`。
+详细指南请参考 `backend/docs/developer_manual.md`。
