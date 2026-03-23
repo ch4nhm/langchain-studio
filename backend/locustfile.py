@@ -4,7 +4,11 @@ import uuid
 
 class ChatUser(HttpUser):
     wait_time = between(1, 2)
-    
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(args, kwargs)
+        self.session_id = None
+
     def on_start(self):
         self.session_id = str(uuid.uuid4())
 
