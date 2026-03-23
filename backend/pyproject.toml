@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "langchain-demo"
+version = "0.1.0"
+description = "A comprehensive LangChain project covering full lifecycle."
+authors = ["Trae Assistant"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = ">=0.1.0"
+langchain-openai = "^0.1.0"
+langchain-community = "^0.0.38"
+langchain-core = ">=0.1.52"
+fastapi = "^0.111.0"
+uvicorn = "^0.30.1"
+chromadb = "^0.5.0"
+pgvector = "^0.2.5"
+psycopg2-binary = "^2.9.9"
+redis = "^5.0.4"
+pydantic = "^2.7.1"
+python-dotenv = "^1.0.1"
+sqlalchemy = "^2.0.30"
+tiktoken = "^0.7.0"
+sse-starlette = "^2.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+pytest-asyncio = "^0.23.6"
+pytest-mock = "^3.14.0"
+locust = "^2.27.0"
+black = "^24.4.2"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+mypy = "^1.10.0"
+pre-commit = "^3.7.1"
+testcontainers = "^4.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
