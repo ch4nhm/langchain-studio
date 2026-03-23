@@ -38,4 +38,4 @@ def generate_dummy_markdown(data_dir: str, num_files: int = 100, words_per_file:
     print(f"Generated {num_files} files with total words: {total_words}")
 
 if __name__ == "__main__":
-    generate_dummy_markdown(os.path.join(os.path.dirname(__file__), "../data"))
+    generate_dummy_markdown(os.path.join(os.path.dirname(__file__), "../../data"))

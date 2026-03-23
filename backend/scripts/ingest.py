@@ -13,7 +13,7 @@ import chromadb
 
 # To resolve import path
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), "../backend"))
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from app.core.config import settings
 
 def count_tokens(text: str) -> int:
@@ -45,7 +45,7 @@ def ingest_docs(data_dir: str = "../data"):
         return
 
     embeddings = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=settings.OPENAI_API_KEY)
-    client = chromadb.PersistentClient(path=os.path.join("../backend", settings.CHROMA_PERSIST_DIRECTORY))
+    client = chromadb.PersistentClient(path=os.path.join("..", settings.CHROMA_PERSIST_DIRECTORY))
     
     vectorstore = Chroma(
         client=client,
@@ -120,4 +120,4 @@ def ingest_docs(data_dir: str = "../data"):
     print(f"Total tokens processed: {total_tokens}")
 
 if __name__ == "__main__":
-    ingest_docs(os.path.join(os.path.dirname(__file__), "../data"))
+    ingest_docs(os.path.join(os.path.dirname(__file__), "../../data"))
