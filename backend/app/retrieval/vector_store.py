@@ -1,5 +1,5 @@
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
+from langchain_community.embeddings import DashScopeEmbeddings
 from app.core.config import settings
 import chromadb
 
@@ -7,11 +7,11 @@ def get_embeddings():
     """
     获取标准的文本嵌入 (Embedding) 模型。
     用于将文本片段和用户的查询转换为高维向量，以便进行相似度计算。
-    默认使用 OpenAI 的 text-embedding-ada-002 模型。
+    使用阿里通义千问的 Embedding 模型。
     """
-    return OpenAIEmbeddings(
-        model="text-embedding-ada-002", 
-        openai_api_key=settings.OPENAI_API_KEY
+    return DashScopeEmbeddings(
+        model="text-embedding-v1", # 使用千问的 embedding 模型
+        dashscope_api_key=settings.OPENAI_API_KEY # 借用原有配置的 Key
     )
 
 def get_vector_store() -> Chroma:
