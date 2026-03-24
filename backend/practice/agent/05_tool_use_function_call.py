@@ -109,7 +109,7 @@ def show_tool_schema():
     """展示工具被转换为 JSON Schema 的样子（这就是发送给 LLM 的工具描述）"""
     print("\n【Function Calling 底层：工具被转换为 JSON Schema】")
     for t in [get_stock_price, send_email, database_tool]:
-        schema = t.args_schema.schema() if t.args_schema else {}
+        schema = t.args_schema.model_json_schema() if t.args_schema else {}
         print(f"\n工具名: {t.name}")
         print(f"描述:   {t.description}")
         print(f"参数 Schema: {json.dumps(schema, ensure_ascii=False, indent=2)}")
@@ -121,7 +121,6 @@ def run_tool_agent():
     llm = ChatTongyi(
         model="qwen-turbo",
         temperature=0,
-        dashscope_api_key=os.environ.get("OPENAI_API_KEY", "")
     )
     all_tools = [get_stock_price, send_email, database_tool, WebScraperTool()]
 

@@ -18,10 +18,11 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "../../backend/.
 
 
 def get_llm(temperature=0.0):
+    api_key = os.environ.get("OPENAI_API_KEY") or os.environ.get("DASHSCOPE_API_KEY") or "sk-dummy"
     return ChatTongyi(
         model="qwen-turbo",
         temperature=temperature,
-        dashscope_api_key=os.environ.get("OPENAI_API_KEY", "")
+        dashscope_api_key=api_key
     )
 
 
