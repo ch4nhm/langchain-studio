@@ -16,7 +16,7 @@
 import os
 from dotenv import load_dotenv
 from langchain_community.chat_models.tongyi import ChatTongyi
-from langchain.memory import (
+from langchain_classic.memory import (
     ConversationBufferMemory,
     ConversationBufferWindowMemory,
     ConversationSummaryMemory,
@@ -24,7 +24,7 @@ from langchain.memory import (
 )
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import DashScopeEmbeddings
-from langchain.memory import VectorStoreRetrieverMemory
+from langchain_classic.memory import VectorStoreRetrieverMemory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage

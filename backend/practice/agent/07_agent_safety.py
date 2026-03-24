@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 from langchain_community.chat_models.tongyi import ChatTongyi
 from langchain_core.tools import tool
 from langchain_core.callbacks import BaseCallbackHandler
-from langchain.agents import AgentExecutor, create_tool_calling_agent
+from langchain_classic.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "../../backend/.env"))

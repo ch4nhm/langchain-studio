@@ -143,7 +143,7 @@ def run_react_manually(question: str, max_steps: int = 6):
 # 使用 LangChain 内置 ReAct Agent（生产方式）
 # =============================================================================
 
-from langchain.agents import AgentExecutor, create_react_agent
+from langchain_classic.agents import AgentExecutor, create_react_agent
 from langchain_core.prompts import PromptTemplate
 
 REACT_TEMPLATE = """Answer the following questions as best you can. You have access to the following tools:

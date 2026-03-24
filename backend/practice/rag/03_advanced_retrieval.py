@@ -12,7 +12,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain.retrievers import MultiQueryRetriever
+from langchain_classic.retrievers import MultiQueryRetriever
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "../../backend/.env"))
 API_KEY = os.environ.get("OPENAI_API_KEY", "")

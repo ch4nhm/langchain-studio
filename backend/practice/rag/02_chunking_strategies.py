@@ -2,7 +2,7 @@
 面试题 R2: 文本切块策略对比
 """
 import os
-from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter, CharacterTextSplitter
 from langchain_core.documents import Document
 
 SAMPLE_TEXT = """
