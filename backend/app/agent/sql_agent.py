@@ -59,7 +59,7 @@ def get_sql_agent() -> Any:
         llm=llm,
         toolkit=toolkit,
         verbose=True, # 开启详细日志，便于调试
-        agent_type="openai-tools", # 使用 OpenAI 的 Function Calling 能力来驱动 Agent
+        agent_type="zero-shot-react-description", # 使用 ReAct 模式驱动 Agent（兼容通义千问）
         max_iterations=3, # 设置最大迭代次数，防止 Agent 陷入无限循环（最多重试 3 次）
         handle_parsing_errors=True # 开启解析错误自动重试机制
     )
